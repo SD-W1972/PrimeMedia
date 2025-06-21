@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===== PRIMEMEDIA - PREMIUM AESTHETIC ===== */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
@@ -447,4 +448,53 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--warm-gold);
+=======
+.body{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    
+}
+
+.container_login { 
+        max-width: 400px;
+        margin: 50px auto;
+        display: none 
+    }
+    
+    .tabs { 
+        display: flex; 
+        margin-bottom: 20px;
+     }
+    
+    .tab {
+     padding: 10px; 
+     cursor: pointer; 
+    }
+    
+    .tab.active {
+        background: #ddd; }
+        
+    .form { display: none; }
+    .form.active { display: block; }
+    
+    .pfp_default_image{
+            border-radius: 50%;
+            display: inline;
+            margin-left: 96%; /* trocar pra padrao rem depois*/
+            width: 4rem;
+            height: 4rem;
+            cursor: pointer;
+        }
+
+.logout{
+display:none; 
+            position:fixed; 
+            top:0; 
+            left:0; 
+            background:red; 
+            padding:20px; 
+            color:white;
+            cursor: pointer;
+>>>>>>> 765d2f6a212dab0c7a6f99f672f01dc125a19ffc
 }
