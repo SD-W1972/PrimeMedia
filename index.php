@@ -198,7 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 20px;
             background: var(--gradient-gold);
@@ -229,7 +229,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
         }
 
         .hero-btn {
-            padding: 15px 40px;
+            padding: 10px 30px;
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -859,11 +859,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
             <p class="hero-description">
                 Descubra uma coleção exclusiva de conteúdo premium, cuidadosamente selecionado para 
                 os paladares mais refinados. Uma experiência cinematográfica única e sofisticada.
+         
+                Comece criando sua conta para visualizar nosso catálogo!
             </p>
             <div class="hero-buttons">
                 <button class="hero-btn primary" onclick="scrollToContent()">Explorar Catálogo</button>
                 <button class="hero-btn secondary" onclick="showLoginDiv()">Minha Conta</button>
             </div>
+            <br>
+            <br>
+            <br>
         </div>
     </section>
 
