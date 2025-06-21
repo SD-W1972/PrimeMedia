@@ -859,11 +859,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
             <p class="hero-description">
                 Descubra uma coleção exclusiva de conteúdo premium, cuidadosamente selecionado para 
                 os paladares mais refinados. Uma experiência cinematográfica única e sofisticada.
+                <br>
+
+                Comece fazendo login para visualizar nosso catálogo
             </p>
             <div class="hero-buttons">
                 <button class="hero-btn primary" onclick="scrollToContent()">Explorar Catálogo</button>
                 <button class="hero-btn secondary" onclick="showLoginDiv()">Minha Conta</button>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
     </section>
 
@@ -1349,7 +1356,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
             queueRenderPage(pageNum);
         }
 
-        // --- IMAGE ZOOM ---
+        // --- IMAGE ZOOM --- ÚNICA merda que funciona direito nesse site
         function setupZoom() {
             const img = document.getElementById('zoom-img');
             let zoomed = false;
@@ -1375,7 +1382,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
             };
         }
 
-        // --- SPOTIFY PLAYER ---
+        // --- SPOTIFY PLAYER --- se fosse uma bosta
         function setupSpotifyPlayer() {
             const audio = document.getElementById('spotify-audio');
             if (!audio) return;
