@@ -859,18 +859,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
             <p class="hero-description">
                 Descubra uma coleção exclusiva de conteúdo premium, cuidadosamente selecionado para 
                 os paladares mais refinados. Uma experiência cinematográfica única e sofisticada.
-                <br>
-
-                Comece fazendo login para visualizar nosso catálogo
             </p>
             <div class="hero-buttons">
                 <button class="hero-btn primary" onclick="scrollToContent()">Explorar Catálogo</button>
                 <button class="hero-btn secondary" onclick="showLoginDiv()">Minha Conta</button>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
         </div>
     </section>
 
@@ -1149,36 +1142,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
             }
         }
 
-        // --- MODAL LOGIC ---
+        // --- MODAL LOGIC --- ALGUEM ME ENSINA A ABRIR PDF
         function openMedia(idx) {
             const media = mediaList[idx];
             document.getElementById('modal-title').textContent = media.title;
             let html = '';
             
-          if(item.type === 'pdf') {
-    mediaElement.innerHTML = `
-        <h3>${item.title}</h3>
-        <div id='pdf-viewer' style='text-align:center;'>
-            <div style="margin-bottom:10px;">
-                <button onclick='prevPage()' class='nav-btn'>Anterior</button>
-                <button onclick='zoomOutPDF()' class='nav-btn'>-</button>
-                <span id='pdf-page-info'></span>
-                <button onclick='zoomInPDF()' class='nav-btn'>+</button>
-                <button onclick='nextPage()' class='nav-btn'>Próxima</button>
-            </div>
-            <canvas id='pdf-canvas' style='max-width:100%;border-radius:10px;box-shadow:0 2px 16px #0008;'></canvas>
-        </div>
-        <div style="margin-top: 10px;">
-            <a href="${item.url}" target="_blank" style="margin-right: 10px;">Abrir PDF em nova aba</a>
-            <button onclick="toggleFavorite(${item.id})">
-                ${isFavorite ? '❤️ Remover dos Favoritos' : '♡ Adicionar aos Favoritos'}
-            </button>
-        </div>
-    `;
-    
-    // Inicializa o visualizador de PDF
-    loadPDF(item.url);
-}else if (media.type === 'image') {
+            if (media.type === 'pdf') {
+              html = `
+                <h3>${item.title}</h3>
+                <a href="${item.url}" target="_blank">Abrir PDF</a>
+                <button onclick="toggleFavorite(${item.id})">
+                    ${isFavorite ? '❤️ Remover dos Favoritos' : '♡ Adicionar aos Favoritos'}
+                </button>
+            `;
+            } else if (media.type === 'image') {
                 html = `<div style='overflow:hidden;text-align:center;'>
                     <img id='zoom-img' src='${media.src}' style='max-width:100%;max-height:70vh;cursor:zoom-in;border-radius:10px;transition:transform 0.3s;'>
                 </div>`;
@@ -1356,7 +1334,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mediaId'])) {
             queueRenderPage(pageNum);
         }
 
-        // --- IMAGE ZOOM --- ÚNICA merda que funciona direito nesse site
+        // --- IMAGE ZOOM --- ÚNICA merda que funciona nesse site e é só um png do shrek
         function setupZoom() {
             const img = document.getElementById('zoom-img');
             let zoomed = false;
