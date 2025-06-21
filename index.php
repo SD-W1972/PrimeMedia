@@ -246,6 +246,9 @@ async function loadMedia() {
     }
 }
 
+
+// CARREGA as mídias merdas a partir do json
+//adapatar os laços condicionais para cada tipo de mídia
 function displayMedia(mediaItems, favorites) {
     const container = document.getElementById('media-container');
     container.innerHTML = '';
